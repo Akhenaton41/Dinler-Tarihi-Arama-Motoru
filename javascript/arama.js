@@ -1,14 +1,14 @@
 var girdi, myObj, date1, date2, regex
 
-var Aylar=["Ocak","Şubat","Mart","Nisan","Mayıs","Haziran","Temmuz","Ağustos","Eylül","Ekim","Kasım","Aralık"]
+var Aylar=["Ocak","Åubat","Mart","Nisan","MayÄ±s","Haziran","Temmuz","AÄŸustos","EylÃ¼l","Ekim","KasÄ±m","AralÄ±k"]
 
-var rastgele=["islam","müslüman","mümin","salih","cuma","namaz","zekat","deprem","intihar","haram","ibadet","muhammed","iman","nimet","tefekkür","namaz","oruç","münafık","müşrik","kafir","deccal","mesih"]
+var rastgele=["islam","mÃ¼slÃ¼man","mÃ¼min","salih","cuma","namaz","zekat","deprem","intihar","haram","ibadet","muhammed","iman","nimet","tefekkÃ¼r","namaz","oruÃ§","mÃ¼nafÄ±k","mÃ¼ÅŸrik","kafir","deccal","mesih"]
 
-const sureAdlari=["Fâtiha","Bakara","Âl-i İmrân","Nisâ","Mâide","En'âm","A'râf","Enfâl","Tevbe","Yûnus","Hûd","Yûsuf","Ra'd","İbrâhîm","Hicr","Nahl","İsrâ","Kehf","Meryem","Tâhâ","Enbiyâ","Hac","Müminûn","Nûr","Furkân","Şuarâ","Neml","Kasas","Ankebut","Rûm","Lokman","Secde","Ahzâb","Sebe","Fâtİr","Yâsin","Sâffât","Sâd","Zümer","Mü’min","Fussilet","Şûrâ","Zuhruf","Duhân","Câsiye","Ahkâf","Muhammed","Fetih","Hucurât","Kaf","Zâriyât","Tûr","Necm","Kamer","Rahmân","Vâkıa","Hadîd","Mücadele","Haşr","Mümtehine","Saf","Cuma","Münâfikûn","Tegâbün","Talâk","Tahrîm","Mülk","Kalem","Hâkka","Meâric","Nûh","Cin","Müzzemmil","Müddessir","Kıyâmet","İnsan","Mürselât","Nebe'","Nâziât","Abese","Tekvîr","İnfitâr","Mutaffifîn","İnşikâk","Bürûc","Târık","A'lâ","Ğâşiye","Fecr","Beled","Şems","Leyl","Duha","İnşirah","Tîn","Alâk","Kadr","Beyyine","Zilzâl","Âdiyât","Kâria","Tekâsür","Asr","Hümeze","Fil","Kureyş","Mâûn","Kevser","Kâfirûn","Nasr","Mesed","İhlâs","Felâk","Nâs"];
+const sureAdlari=["FÃ¢tiha","Bakara","Ã‚l-i Ä°mrÃ¢n","NisÃ¢","MÃ¢ide","En'Ã¢m","A'rÃ¢f","EnfÃ¢l","Tevbe","YÃ»nus","HÃ»d","YÃ»suf","Ra'd","Ä°brÃ¢hÃ®m","Hicr","Nahl","Ä°srÃ¢","Kehf","Meryem","TÃ¢hÃ¢","EnbiyÃ¢","Hac","MÃ¼minÃ»n","NÃ»r","FurkÃ¢n","ÅuarÃ¢","Neml","Kasas","Ankebut","RÃ»m","Lokman","Secde","AhzÃ¢b","Sebe","FÃ¢tÄ°r","YÃ¢sin","SÃ¢ffÃ¢t","SÃ¢d","ZÃ¼mer","MÃ¼â€™min","Fussilet","ÅÃ»rÃ¢","Zuhruf","DuhÃ¢n","CÃ¢siye","AhkÃ¢f","Muhammed","Fetih","HucurÃ¢t","Kaf","ZÃ¢riyÃ¢t","TÃ»r","Necm","Kamer","RahmÃ¢n","VÃ¢kÄ±a","HadÃ®d","MÃ¼cadele","HaÅŸr","MÃ¼mtehine","Saf","Cuma","MÃ¼nÃ¢fikÃ»n","TegÃ¢bÃ¼n","TalÃ¢k","TahrÃ®m","MÃ¼lk","Kalem","HÃ¢kka","MeÃ¢ric","NÃ»h","Cin","MÃ¼zzemmil","MÃ¼ddessir","KÄ±yÃ¢met","Ä°nsan","MÃ¼rselÃ¢t","Nebe'","NÃ¢ziÃ¢t","Abese","TekvÃ®r","Ä°nfitÃ¢r","MutaffifÃ®n","Ä°nÅŸikÃ¢k","BÃ¼rÃ»c","TÃ¢rÄ±k","A'lÃ¢","ÄÃ¢ÅŸiye","Fecr","Beled","Åems","Leyl","Duha","Ä°nÅŸirah","TÃ®n","AlÃ¢k","Kadr","Beyyine","ZilzÃ¢l","Ã‚diyÃ¢t","KÃ¢ria","TekÃ¢sÃ¼r","Asr","HÃ¼meze","Fil","KureyÅŸ","MÃ¢Ã»n","Kevser","KÃ¢firÃ»n","Nasr","Mesed","Ä°hlÃ¢s","FelÃ¢k","NÃ¢s"];
 
-const dilKodlari = { "tr": "Türkçe", "en": "İngilizce", "ar": "Arapça", "fr": "Fransızca", "de": "Almanca", "es": "İspanyolca", "it": "İtalyanca", "ru": "Rusça", "zh": "Çince", "ja": "Japonca", "ko": "Korece", "pt": "Portekizce", "nl": "Flemenkçe", "el": "Yunanca", "hi": "Hintçe", "sv": "İsveççe", "no": "Norveççe", "da": "Danca", "fi": "Fince", "pl": "Lehçe", "hu": "Macarca", "cs": "Çekçe", "sk": "Slovakça", "bg": "Bulgarca", "ro": "Rumence", "uk": "Ukraynaca", "sr": "Sırpça", "hr": "Hırvatça", "he": "İbranice", "fa": "Farsça" };
+const dilKodlari = { "tr": "TÃ¼rkÃ§e", "en": "Ä°ngilizce", "ar": "ArapÃ§a", "fr": "FransÄ±zca", "de": "Almanca", "es": "Ä°spanyolca", "it": "Ä°talyanca", "ru": "RusÃ§a", "zh": "Ã‡ince", "ja": "Japonca", "ko": "Korece", "pt": "Portekizce", "nl": "FlemenkÃ§e", "el": "Yunanca", "hi": "HintÃ§e", "sv": "Ä°sveÃ§Ã§e", "no": "NorveÃ§Ã§e", "da": "Danca", "fi": "Fince", "pl": "LehÃ§e", "hu": "Macarca", "cs": "Ã‡ekÃ§e", "sk": "SlovakÃ§a", "bg": "Bulgarca", "ro": "Rumence", "uk": "Ukraynaca", "sr": "SÄ±rpÃ§a", "hr": "HÄ±rvatÃ§a", "he": "Ä°branice", "fa": "FarsÃ§a" };
 
-const kitapKategorileri = { "social science":"Sosyal Bilimler","fiction": "Kurgu", "religion": "Din", "history": "Tarih", "science": "Bilim", "biography": "Biyografi", "technology": "Teknoloji", "health": "Sağlık", "education": "Eğitim", "art": "Sanat", "business": "İş Dünyası", "self-help": "Kişisel Gelişim", "philosophy": "Felsefe", "psychology": "Psikoloji", "travel": "Seyahat", "cooking": "Yemek", "children": "Çocuk Kitapları", "poetry": "Şiir", "comics": "Çizgi Roman", "sports": "Spor", "law": "Hukuk", "music": "Müzik", "drama": "Drama", "romance": "Romantizm", "fantasy": "Fantastik", "horror": "Korku", "adventure": "Macera" };
+const kitapKategorileri = { "social science":"Sosyal Bilimler","fiction": "Kurgu", "religion": "Din", "history": "Tarih", "science": "Bilim", "biography": "Biyografi", "technology": "Teknoloji", "health": "SaÄŸlÄ±k", "education": "EÄŸitim", "art": "Sanat", "business": "Ä°ÅŸ DÃ¼nyasÄ±", "self-help": "KiÅŸisel GeliÅŸim", "philosophy": "Felsefe", "psychology": "Psikoloji", "travel": "Seyahat", "cooking": "Yemek", "children": "Ã‡ocuk KitaplarÄ±", "poetry": "Åiir", "comics": "Ã‡izgi Roman", "sports": "Spor", "law": "Hukuk", "music": "MÃ¼zik", "drama": "Drama", "romance": "Romantizm", "fantasy": "Fantastik", "horror": "Korku", "adventure": "Macera" };
 
 const cevirKategori = (kategori) => kitapKategorileri[kategori.toLowerCase()] || kategori;
 
@@ -19,7 +19,7 @@ function random(r){
 	}
 
 function baslat(){
-	// Sayfa yüklendiğinde LocalStorage kontrolü yapılıyor
+	// Sayfa yÃ¼klendiÄŸinde LocalStorage kontrolÃ¼ yapÄ±lÄ±yor
 	var kaydedilenTur = localStorage.getItem("secilenAramaTuru");
 	if (kaydedilenTur !== null) {
 		id("aramaTuru").value = kaydedilenTur;
@@ -51,15 +51,15 @@ function Ara(e) {
 
     girdi = kucukHarf(girdi);
     
-    // Kelimeleri dinamik olarak <mark> içine alacak düzenli ifade
+    // Kelimeleri dinamik olarak <mark> iÃ§ine alacak dÃ¼zenli ifade
     regex = new RegExp("(" + girdi.trim() + ")", "gi");
     
     const arama$ = parseInt(id("aramaTuru").value);
     
-    // Seçilen arama türünü anlık olarak hafızaya kaydediyoruz
+    // SeÃ§ilen arama tÃ¼rÃ¼nÃ¼ anlÄ±k olarak hafÄ±zaya kaydediyoruz
     localStorage.setItem("secilenAramaTuru", arama$);
 
-    id("sonucAlani").innerHTML = "<p>Lütfen bekleyin...</p>";
+    id("sonucAlani").innerHTML = "<p>LÃ¼tfen bekleyin...</p>";
 
     switch (arama$) {
         case 0: kurandaAra(); break;
@@ -101,7 +101,7 @@ function Ara(e) {
 		case 39: talmudAra("Tanakh"); break;
 		case 40: talmudAra("Tosefta"); break;
 		case 41: bibleGetir("13660-16097"); break;         // Zebur
-        case 42: bibleGetir("22724-30181"); break;         // İncil
+        case 42: bibleGetir("22724-30181"); break;         // Ä°ncil
     }
 }
 
@@ -109,11 +109,11 @@ function sonucSayisi(e) {
     const date2 = new Date();
     const zamanFarki = date2.getTime() - date1.getTime();
     const saniye = (zamanFarki / 1000).toFixed(2);
-    return `<p class='sonucSay'>Yaklaşık <b>${e}</b> sonuç bulundu. (${saniye} saniye)</p>`;
+    return `<p class='sonucSay'>YaklaÅŸÄ±k <b>${e}</b> sonuÃ§ bulundu. (${saniye} saniye)</p>`;
 }
 
 function ayetBicem(e, ee) {
-    // Kurân Meali için kelime vurgulama - MARK yapİsİ
+    // KurÃ¢n Meali iÃ§in kelime vurgulama - MARK yapÄ°sÄ°
     let ayet$ = (e.text).replace(regex, "<mark>$1</mark>");
     return `
         <p class='meal'>
@@ -132,10 +132,10 @@ function kurandaAra() {
             if (this.status === 200) {
                 const myObj = JSON.parse(this.responseText);
                 
-                // Başlangıç veya boşluk kontrolü için Regex
+                // BaÅŸlangÄ±Ã§ veya boÅŸluk kontrolÃ¼ iÃ§in Regex
                 const kontrolRegex = new RegExp("(^|\\s)" + aranan, "i");
                 
-                // Sadece kuralına uyanları filtrele
+                // Sadece kuralÄ±na uyanlarÄ± filtrele
                 const filtrelenmisMatches = myObj.data.matches.filter(match => 
                     kontrolRegex.test(match.text)
                 );
@@ -147,15 +147,15 @@ function kurandaAra() {
 					const vurguRegex = new RegExp("((^|\\s)" + aranan + ")", "gi");
                     let metin = filtrelenmisMatches[i].text.replace(vurguRegex, "<mark>$1</mark>"); 
                     
-                    // ayetBicem fonksiyonunu güncel metin ile çağırıyoruz
-                    // Not: ayetBicem fonksiyonunun metni override ettiğinden emin olmalısın
+                    // ayetBicem fonksiyonunu gÃ¼ncel metin ile Ã§aÄŸÄ±rÄ±yoruz
+                    // Not: ayetBicem fonksiyonunun metni override ettiÄŸinden emin olmalÄ±sÄ±n
                     let kopyaAyet = { ...filtrelenmisMatches[i], text: metin };
                     a$ += ayetBicem(kopyaAyet, i);
                 }
 
                 id("sonucAlani").innerHTML = a$;
             } else {
-                id("sonucAlani").innerHTML = "<p>Bir hata oluştu. Lütfen tekrar deneyin.</p>";
+                id("sonucAlani").innerHTML = "<p>Bir hata oluÅŸtu. LÃ¼tfen tekrar deneyin.</p>";
             }
         } else if (this.readyState === 2) {
             id("sonucAlani").innerHTML = sonucSayisi(0);
@@ -171,9 +171,9 @@ function kurandaAra() {
 
 function kucukHarf(e) {	
     e = e.toLocaleLowerCase('tr-TR')
-               .replace(/â/g, "a")
-               .replace(/û/g, "u")
-               .replace(/î/g, "i")
+               .replace(/Ã¢/g, "a")
+               .replace(/Ã»/g, "u")
+               .replace(/Ã®/g, "i")
                .replace(/[&\/\\#,;+()$~%.'":*?<>{}]/g, '');
     return e;
 }
@@ -193,7 +193,7 @@ function hadisAra(kitap) {
 
                 if (hadis2.indexOf(girdi2) > -1) {
                     bulunan++;
-                    // Hadis metinleri için kelime vurgulama - MARK yapİsİ
+                    // Hadis metinleri iÃ§in kelime vurgulama - MARK yapÄ°sÄ°
                     const highlightedHadis = hadis.replace(regex, "<mark>$1</mark>");
                     b$ += `<p class='meal'><span>${bulunan}) Hadis No: ${myObj["hadiths"][i].hadithnumber}</span><br><br>${highlightedHadis}</p><hr style='border:0; border-top:1px dashed #ccc;'>`;
                 }
@@ -239,7 +239,7 @@ function apiCallback(res) {
         
         icerik = icerik.replace(/\\\"/gi, "\"");
         
-        // Wikipedia içeri&eth;i için kelime vurgulama - MARK yapİsİ
+        // Wikipedia iÃ§eri&eth;i iÃ§in kelime vurgulama - MARK yapÄ°sÄ°
         icerik = icerik.replace(regex, "<mark>$1</mark>");
         
         var resimHTML = resimURL ? "<img src='" + resimURL + "' alt='Resim' style='max-width: 100%; height: auto;'>" : "";
@@ -263,7 +263,7 @@ function tdkAra() {
                 const veri = myObj[j]["anhalarListe"];
 
                 for (let i = 0; i < veri.length; i++) {
-                    // TDK sözlük anlamlarİ için kelime vurgulama - MARK yapİsİ
+                    // TDK sÃ¶zlÃ¼k anlamlarÄ° iÃ§in kelime vurgulama - MARK yapÄ°sÄ°
                     let anlamHTML = veri[i].anlam.replace(regex, "<mark>$1</mark>");
                     b$ += "<p>" + (bulunan + 1) + ". " + anlamHTML + "</p>";
                     bulunan++;
@@ -292,45 +292,45 @@ function sozlukteAra() {
 
 
 function etimolojiAra() {
-    // 1. Girdi kontrolü
+    // 1. Girdi kontrolÃ¼
     const girdiDegeri = id("myInput").value.trim();
     if (!girdiDegeri) {
-        id("sonucAlani").innerHTML = "<p>Lütfen bir kelime girin.</p>";
+        id("sonucAlani").innerHTML = "<p>LÃ¼tfen bir kelime girin.</p>";
         return;
     }
 
-    // 2. Arayüzü hazırla
-    id("sonucAlani").innerHTML = "<p>Sorgulanıyor: " + girdiDegeri + "...</p>";
-    console.log("Sorgu başlatıldı: " + girdiDegeri);
+    // 2. ArayÃ¼zÃ¼ hazÄ±rla
+    id("sonucAlani").innerHTML = "<p>SorgulanÄ±yor: " + girdiDegeri + "...</p>";
+    console.log("Sorgu baÅŸlatÄ±ldÄ±: " + girdiDegeri);
 
     const regex = new RegExp("(" + girdiDegeri + ")", "gi");
     const url = "https://api.etimolojiturkce.com/word/" + encodeURIComponent(girdiDegeri);
 
-    // 3. İsteği gerçekleştir (Fetch + Hata Yakalama)
+    // 3. Ä°steÄŸi gerÃ§ekleÅŸtir (Fetch + Hata Yakalama)
     fetch(url)
         .then(response => {
             if (!response.ok) {
-                throw new Error("Sunucu " + response.status + " hatası döndürdü.");
+                throw new Error("Sunucu " + response.status + " hatasÄ± dÃ¶ndÃ¼rdÃ¼.");
             }
             return response.json();
         })
         .then(myObj => {
-            // Başarılı olursa burası çalışır
-            console.log("Veri başarıyla alındı.");
+            // BaÅŸarÄ±lÄ± olursa burasÄ± Ã§alÄ±ÅŸÄ±r
+            console.log("Veri baÅŸarÄ±yla alÄ±ndÄ±.");
 
             let a$ = sonucSayisi(1);
             
-            // HTML oluşturma kısmı
+            // HTML oluÅŸturma kÄ±smÄ±
             let wordHTML = myObj.word ? myObj.word.replace(regex, "<mark>$1</mark>") : "Bilinmiyor";
-            let explanationHTML = myObj.explanation ? myObj.explanation.replace(regex, "<mark>$1</mark>") : "Açıklama yok.";
+            let explanationHTML = myObj.explanation ? myObj.explanation.replace(regex, "<mark>$1</mark>") : "AÃ§Ä±klama yok.";
             
             let b$ = "<h2>" + wordHTML + "</h2>";
-            b$ += "<p class='meal'><span>Köken Dil:</span> " + (myObj.derivedLang || 'Bilinmiyor') + "</p>";
-            b$ += "<p class='meal'><span>Açıklama:</span> " + explanationHTML + "</p>";
+            b$ += "<p class='meal'><span>KÃ¶ken Dil:</span> " + (myObj.derivedLang || 'Bilinmiyor') + "</p>";
+            b$ += "<p class='meal'><span>AÃ§Ä±klama:</span> " + explanationHTML + "</p>";
             
             if (myObj.root) {
                 let rootHTML = myObj.root.replace(regex, "<mark>$1</mark>");
-                b$ += "<p class='meal'><span>Köken (Kök):</span> " + rootHTML + "</p>";
+                b$ += "<p class='meal'><span>KÃ¶ken (KÃ¶k):</span> " + rootHTML + "</p>";
             }
             
             if (myObj.additional) {
@@ -341,11 +341,11 @@ function etimolojiAra() {
             id("sonucAlani").innerHTML = a$ + b$;
         })
         .catch(err => {
-            // Hata olursa burası çalışır
-            console.error("Fetch Hatası:", err);
+            // Hata olursa burasÄ± Ã§alÄ±ÅŸÄ±r
+            console.error("Fetch HatasÄ±:", err);
             id("sonucAlani").innerHTML = "<p style='color:red;'>Hata: " + err.message + "</p>" +
-                                         "<p>İpucu: Eğer konsolda 'CORS' hatası görüyorsan, bu API tarayıcıdan doğrudan çağrılamaz. " +
-                                         "Veriyi kendi projene bir JSON dosyası olarak kaydedip yerel okutman gerekir.</p>";
+                                         "<p>Ä°pucu: EÄŸer konsolda 'CORS' hatasÄ± gÃ¶rÃ¼yorsan, bu API tarayÄ±cÄ±dan doÄŸrudan Ã§aÄŸrÄ±lamaz. " +
+                                         "Veriyi kendi projene bir JSON dosyasÄ± olarak kaydedip yerel okutman gerekir.</p>";
         });
 }
 
@@ -372,7 +372,7 @@ function etimolojiAra() {
 
 
 
-// Avesta İçin Özel Canlı Çeviri Yardımcısı
+// Avesta Ä°Ã§in Ã–zel CanlÄ± Ã‡eviri YardÄ±mcÄ±sÄ±
 async function avestaTranslate(metin, kaynakDil, hedefDil) {
     if (!metin.trim()) return metin;
     try {
@@ -392,7 +392,7 @@ async function avestaTranslate(metin, kaynakDil, hedefDil) {
     }
 }
 
-// Seçici Kelime Kontrolü (Özel isimleri korur, Türkçe kelimeleri çeviriye gönderir)
+// SeÃ§ici Kelime KontrolÃ¼ (Ã–zel isimleri korur, TÃ¼rkÃ§e kelimeleri Ã§eviriye gÃ¶nderir)
 function avestaCeviriGerekliMi(kelime) {
     var ham = kelime.toLowerCase().trim();
     var ozelTerimler = ["ahura", "mazda", "zarathustra", "zoroaster", "haoma", "yasna", "sraosha", "visperad", "yazata", "atash"];
@@ -401,7 +401,7 @@ function avestaCeviriGerekliMi(kelime) {
         return false; 
     }
 
-    var turkceKarakterler = /[çşğüöıİ]/;
+    var turkceKarakterler = /[Ã§ÅŸÄŸÃ¼Ã¶Ä±Ä°]/;
     if (turkceKarakterler.test(kelime)) {
         return true; 
     }
@@ -409,20 +409,20 @@ function avestaCeviriGerekliMi(kelime) {
     return true; 
 }
 
-// Ana Avesta Arama Fonksiyonu (1-72 Arası Tarama & İlerleme Çubuğu)
+// Ana Avesta Arama Fonksiyonu (1-72 ArasÄ± Tarama & Ä°lerleme Ã‡ubuÄŸu)
 async function avestaAra() {
     var arananKelime = girdi.trim(); 
     var aranacakIngilizceKelime = arananKelime;
 
-    // Sonuç alanına ilerleme çubuğunu yerleştiriyoruz
+    // SonuÃ§ alanÄ±na ilerleme Ã§ubuÄŸunu yerleÅŸtiriyoruz
     id("sonucAlani").innerHTML = 
-        "<p id='avestaDurum'>Avesta Külliyatı analiz ediliyor...</p>" +
+        "<p id='avestaDurum'>Avesta KÃ¼lliyatÄ± analiz ediliyor...</p>" +
         "<div class='progress-container' id='pCont' style='display:block;'><div class='progress-bar' id='pBar'></div></div>";
 
     var pBar = id("pBar");
     var avestaDurum = id("avestaDurum");
 
-    // Kelime analizi: Sadece Avesta'ya özel lokal çeviri
+    // Kelime analizi: Sadece Avesta'ya Ã¶zel lokal Ã§eviri
     if (avestaCeviriGerekliMi(arananKelime)) {
         var cevrilmis = await avestaTranslate(arananKelime, "tr", "en");
         aranacakIngilizceKelime = cevrilmis.trim().toLowerCase();
@@ -431,13 +431,13 @@ async function avestaAra() {
     }
 
     var bulunanSonuclar = [];
-    var toplamDosya = 72; // Klasördeki toplam dosya sayısı 72'ye çıkarıldı
+    var toplamDosya = 72; // KlasÃ¶rdeki toplam dosya sayÄ±sÄ± 72'ye Ã§Ä±karÄ±ldÄ±
 
     for (var i = 1; i <= toplamDosya; i++) {
-        // İlerleme çubuğunu güncelliyoruz
+        // Ä°lerleme Ã§ubuÄŸunu gÃ¼ncelliyoruz
         var yuzde = Math.round((i / toplamDosya) * 100);
         pBar.style.width = yuzde + "%";
-        avestaDurum.innerHTML = "Avesta Külliyatı taranıyor: " + i + " / " + toplamDosya + " dosya incelendi... (%" + yuzde + ")";
+        avestaDurum.innerHTML = "Avesta KÃ¼lliyatÄ± taranÄ±yor: " + i + " / " + toplamDosya + " dosya incelendi... (%" + yuzde + ")";
 
         var rawUrl = "https://raw.githubusercontent.com/contexttesting/avesta/master/yasnas/" + i + ".html";
         
@@ -447,12 +447,12 @@ async function avestaAra() {
 
             var hamHtml = await response.text();
             
-            // HTML temizliği ve ayet ayrıştırma
+            // HTML temizliÄŸi ve ayet ayrÄ±ÅŸtÄ±rma
             var temizMetin = hamHtml.replace(/<\/?[^>]+(>|$)/g, "");
             temizMetin = temizMetin.replace(/\r?\n|\r/g, " ");
             temizMetin = temizMetin.replace(/\s+/g, " ");
 
-            // "1. ", "2. " düzenine göre ayetleri bölüyoruz
+            // "1. ", "2. " dÃ¼zenine gÃ¶re ayetleri bÃ¶lÃ¼yoruz
             var ayetler = temizMetin.split(/(?=\b\d+\.\s)/);
 
             ayetler.forEach(function(ayetMetni) {
@@ -466,37 +466,37 @@ async function avestaAra() {
             });
 
         } catch (e) {
-            console.error(i + ".html taranırken hata.");
+            console.error(i + ".html taranÄ±rken hata.");
         }
     }
 
     if (bulunanSonuclar.length === 0) {
-        id("sonucAlani").innerHTML = sonucSayisi(0) + "<p>Avesta içinde <b>\"" + arananKelime + "\"</b> ifadesini içeren bir ayet bulunamadı.</p>";
+        id("sonucAlani").innerHTML = sonucSayisi(0) + "<p>Avesta iÃ§inde <b>\"" + arananKelime + "\"</b> ifadesini iÃ§eren bir ayet bulunamadÄ±.</p>";
         return;
     }
 
-    // Üst üste binmeyi engellemek için tüm çeviri süreçlerini adım adım (senkronize) yürütüyoruz
-    avestaDurum.innerHTML = "Eşleşen ayetler Türkçeye tercüme ediliyor, lütfen bekleyin...";
+    // Ãœst Ã¼ste binmeyi engellemek iÃ§in tÃ¼m Ã§eviri sÃ¼reÃ§lerini adÄ±m adÄ±m (senkronize) yÃ¼rÃ¼tÃ¼yoruz
+    avestaDurum.innerHTML = "EÅŸleÅŸen ayetler TÃ¼rkÃ§eye tercÃ¼me ediliyor, lÃ¼tfen bekleyin...";
     
-    var limit = Math.min(bulunanSonuclar.length, 5); // İlk 5 sonucu sınırla
+    var limit = Math.min(bulunanSonuclar.length, 5); // Ä°lk 5 sonucu sÄ±nÄ±rla
     var htmlAkisi = sonucSayisi(bulunanSonuclar.length);
     var dinamikTurkceRegex = new RegExp("(" + arananKelime + "|" + aranacakIngilizceKelime + ")", "gi");
 
     for (var n = 0; n < limit; n++) {
         var item = bulunanSonuclar[n];
         
-        // Sırayla her metni çeviriyoruz (Üst üste binme bu sayede engellendi)
+        // SÄ±rayla her metni Ã§eviriyoruz (Ãœst Ã¼ste binme bu sayede engellendi)
         var turkceMeal = await avestaTranslate(item.metin, "en", "tr");
         var vTur = turkceMeal.replace(dinamikTurkceRegex, "<mark>$1</mark>");
 
-        // İngilizce metinleri kaldırdık, sadece Türkçe kalacak şekilde div mimarisine sokuyoruz
+        // Ä°ngilizce metinleri kaldÄ±rdÄ±k, sadece TÃ¼rkÃ§e kalacak ÅŸekilde div mimarisine sokuyoruz
         htmlAkisi += "<div class='meal' style='position:relative; clear:both; margin-bottom:20px;'>" +
                      "<span>" + item.ref + "</span><br><br>" +
                      vTur + "" +
                      "</div><hr style='border:0; border-top:1px dashed #ccc; clear:both;'>";
     }
 
-    // İlerleme çubuğunu gizle ve temiz sonuçları bas
+    // Ä°lerleme Ã§ubuÄŸunu gizle ve temiz sonuÃ§larÄ± bas
     id("sonucAlani").innerHTML = htmlAkisi;
 }
 
@@ -511,19 +511,19 @@ async function avestaAra() {
 
 
 
-// Rigveda Arama Fonksiyonu - Boşluk Hatası Düzeltilmiş Sürüm
+// Rigveda Arama Fonksiyonu - BoÅŸluk HatasÄ± DÃ¼zeltilmiÅŸ SÃ¼rÃ¼m
 async function rigvedaAra() {
     var arananKelime = girdi.trim(); 
     var aranacakIngilizceKelime = arananKelime;
 
     id("sonucAlani").innerHTML = 
-        "<p id='rigvedaDurum'>Rigveda Külliyatı GitHub üzerinden indiriliyor...</p>" +
+        "<p id='rigvedaDurum'>Rigveda KÃ¼lliyatÄ± GitHub Ã¼zerinden indiriliyor...</p>" +
         "<div class='progress-container' id='pCont' style='display:block;'><div class='progress-bar' id='pBar'></div></div>";
 
     var pBar = id("pBar");
     var rigvedaDurum = id("rigvedaDurum");
 
-    // İÇE GÖMÜLÜ ÇEVİRİ MEKANİZMASI
+    // Ä°Ã‡E GÃ–MÃœLÃœ Ã‡EVÄ°RÄ° MEKANÄ°ZMASI
     async function icCeviri(metin, kaynakDil, hedefDil) {
         if (!metin.trim()) return metin;
         try {
@@ -543,7 +543,7 @@ async function rigvedaAra() {
         }
     }
 
-    // Türkçe aramayı arka planda İngilizceye çeviriyoruz
+    // TÃ¼rkÃ§e aramayÄ± arka planda Ä°ngilizceye Ã§eviriyoruz
     var cevrilmis = await icCeviri(arananKelime, "tr", "en");
     aranacakIngilizceKelime = cevrilmis.trim();
 
@@ -553,10 +553,10 @@ async function rigvedaAra() {
 
     try {
         pBar.style.width = "50%";
-        rigvedaDurum.innerHTML = "Uzak veritabanı analiz ediliyor...";
+        rigvedaDurum.innerHTML = "Uzak veritabanÄ± analiz ediliyor...";
 
         var response = await fetch(rawGithubUrl);
-        if (!response.ok) throw new Error("GitHub veritabanına erişilemedi.");
+        if (!response.ok) throw new Error("GitHub veritabanÄ±na eriÅŸilemedi.");
 
         var rigvedaVerisi = await response.json(); 
         pBar.style.width = "80%";
@@ -575,17 +575,17 @@ async function rigvedaAra() {
         }
 
     } catch (hata) {
-        id("sonucAlani").innerHTML = "<p><b>Hata:</b> GitHub üzerindeki JSON dosyası yüklenirken bir sorun oluştu.</p>";
+        id("sonucAlani").innerHTML = "<p><b>Hata:</b> GitHub Ã¼zerindeki JSON dosyasÄ± yÃ¼klenirken bir sorun oluÅŸtu.</p>";
         console.error(hata);
         return;
     }
 
     if (bulunanSonuclar.length === 0) {
-        id("sonucAlani").innerHTML = sonucSayisi(0) + "<div style='clear:both; padding-top:20px;'><p>Rigveda içinde <b>\"" + arananKelime + "\"</b> ifadesini içeren bir ayet bulunamadı.</p></div>";
+        id("sonucAlani").innerHTML = sonucSayisi(0) + "<div style='clear:both; padding-top:20px;'><p>Rigveda iÃ§inde <b>\"" + arananKelime + "\"</b> ifadesini iÃ§eren bir ayet bulunamadÄ±.</p></div>";
         return;
     }
 
-    rigvedaDurum.innerHTML = "Eşleşen kayıtlar Türkçeye tercüme ediliyor, lütfen bekleyin...";
+    rigvedaDurum.innerHTML = "EÅŸleÅŸen kayÄ±tlar TÃ¼rkÃ§eye tercÃ¼me ediliyor, lÃ¼tfen bekleyin...";
     
     var limit = Math.min(bulunanSonuclar.length, 15); 
     var htmlAkisi = "";
@@ -598,12 +598,12 @@ async function rigvedaAra() {
         var vTur = turkceMeal.replace(dinamikTurkceRegex, "<mark>$1</mark>");
 
         htmlAkisi += "<div style='display: block !important; position: relative !important; clear: both !important; width: 100% !important; margin: 15px 0 !important; padding: 15px !important; background: #fff; border: 1px solid #eee; border-radius: 4px; box-sizing: border-box !important; height: auto !important;'>" +
-                     "<span style='color: #d9534f !important; font-weight: bold !important; display: block !important; margin-bottom: 8px !important;'>Rigveda - Mandala: " + ayet.mandala + ", İlahi: " + ayet.hymn + ", Ayet: " + ayet.verse + "</span>" +
+                     "<span style='color: #d9534f !important; font-weight: bold !important; display: block !important; margin-bottom: 8px !important;'>Rigveda - Mandala: " + ayet.mandala + ", Ä°lahi: " + ayet.hymn + ", Ayet: " + ayet.verse + "</span>" +
                      "<p style='margin: 0 !important; padding: 0 !important; display: block !important; height: auto !important; max-height: none !important; overflow: visible !important;'>" + vTur + "</p>" +
                      "</div>";
     }
 
-    // İŞTE BURASI DÜZELTİLDİ: Yapay padding-top kaldırıldı (0 yapıldı)
+    // Ä°ÅTE BURASI DÃœZELTÄ°LDÄ°: Yapay padding-top kaldÄ±rÄ±ldÄ± (0 yapÄ±ldÄ±)
     id("sonucAlani").innerHTML = 
         sonucSayisi(bulunanSonuclar.length) + 
         "<div style='clear: both !important; display: block !important; padding-top: 0px !important; width: 100% !important;'>" + 
@@ -624,16 +624,16 @@ async function rigvedaAra() {
 
 
 
-// Risale-i Nur Arama Fonksiyonu - Güvenli ve Token'sız Sürüm
+// Risale-i Nur Arama Fonksiyonu - GÃ¼venli ve Token'sÄ±z SÃ¼rÃ¼m
 async function risaleAra() {
     var arananKelime = id("myInput").value.trim();
     if (arananKelime.length < 3) {
-        id("sonucAlani").innerHTML = "<p>Lütfen en az 3 karakter girin.</p>";
+        id("sonucAlani").innerHTML = "<p>LÃ¼tfen en az 3 karakter girin.</p>";
         return;
     }
     
     id("sonucAlani").innerHTML = 
-        "<p id='risaleDurum'>GitHub API üzerinden külliyat taranıyor...</p>" +
+        "<p id='risaleDurum'>GitHub API Ã¼zerinden kÃ¼lliyat taranÄ±yor...</p>" +
         "<div class='progress-container' id='pCont' style='display:block;'><div class='progress-bar' id='pBar'></div></div>";
 
     var pBar = id("pBar");
@@ -646,7 +646,7 @@ async function risaleAra() {
     var url = "https://api.github.com/search/code?q=" + encodeURIComponent(kucukHarf(arananKelime)) + "+repo:" + repoOwner + "/" + repoName + "+path:txt";
 
     try {
-        // Authorization satırı tamamen kaldırıldı, GitHub API'sine token'sız istek atılıyor.
+        // Authorization satÄ±rÄ± tamamen kaldÄ±rÄ±ldÄ±, GitHub API'sine token'sÄ±z istek atÄ±lÄ±yor.
         var response = await fetch(url, {
             headers: {
                 "Accept": "application/vnd.github.v3.text-match+json"
@@ -654,20 +654,20 @@ async function risaleAra() {
         });
 
         if (!response.ok) {
-            if (response.status === 403) throw new Error("GitHub API kota sınırına takıldı. Lütfen bir süre bekle.");
-            throw new Error("GitHub sunucu hatası: " + response.status);
+            if (response.status === 403) throw new Error("GitHub API kota sÄ±nÄ±rÄ±na takÄ±ldÄ±. LÃ¼tfen bir sÃ¼re bekle.");
+            throw new Error("GitHub sunucu hatasÄ±: " + response.status);
         }
 
         var veri = await response.json();
         var items = veri.items || [];
 
         if (items.length === 0) {
-            id("sonucAlani").innerHTML = sonucSayisi(0) + "<p>Külliyat içerisinde <b>\"" + arananKelime + "\"</b> ifadesiyle eşleşen bir metin bulunamadı.</p>";
+            id("sonucAlani").innerHTML = sonucSayisi(0) + "<p>KÃ¼lliyat iÃ§erisinde <b>\"" + arananKelime + "\"</b> ifadesiyle eÅŸleÅŸen bir metin bulunamadÄ±.</p>";
             return;
         }
 
         pBar.style.width = "80%";
-        risaleDurum.innerHTML = "Sonuçlar listeleniyor...";
+        risaleDurum.innerHTML = "SonuÃ§lar listeleniyor...";
 
         var htmlAkisi = "";
         var lokalRegex = new RegExp("(" + arananKelime + ")", "gi");
@@ -675,7 +675,7 @@ async function risaleAra() {
         items.forEach(function(item, index) {
             var dosyaYolu = item.path;
             var parcalar = dosyaYolu.split("/");
-            var kitapAdi = parcalar[1] ? decodeURIComponent(parcalar[1]) : "Külliyat";
+            var kitapAdi = parcalar[1] ? decodeURIComponent(parcalar[1]) : "KÃ¼lliyat";
             var dosyaAdi = parcalar[2] ? decodeURIComponent(parcalar[2]).replace(".txt", "") : decodeURIComponent(parcalar[1]);
 
             var pasajlar = "";
@@ -686,7 +686,7 @@ async function risaleAra() {
                     pasajlar += "... " + vurgulu + " ...<br>";
                 });
             } else {
-                pasajlar = "Eşleşen pasaj doğrudan çözülemedi.";
+                pasajlar = "EÅŸleÅŸen pasaj doÄŸrudan Ã§Ã¶zÃ¼lemedi.";
             }
 
             htmlAkisi += "<div style='display: block !important; clear: both !important; width: 100% !important; margin: 15px 0 !important; padding: 15px !important; background: #fff; border: 1px solid #eee; border-radius: 4px; box-sizing: border-box !important; height: auto !important; position: static !important;'>" +
@@ -716,7 +716,7 @@ async function gitaAra() {
     var arananKelime = id("myInput").value.trim();
     if (arananKelime.length < 3) return;
 
-    id("sonucAlani").innerHTML = "<p id='gitaDurum'>Bhagavad Gita aranıyor...</p>";
+    id("sonucAlani").innerHTML = "<p id='gitaDurum'>Bhagavad Gita aranÄ±yor...</p>";
 
     try {
         var aranacakIngilizceKelime = await avestaTranslate(arananKelime, "tr", "en");
@@ -731,7 +731,7 @@ async function gitaAra() {
         );
 
         if (bulunanlar.length === 0) {
-            id("sonucAlani").innerHTML = sonucSayisi(0) + "<p>Sonuç bulunamadı.</p>";
+            id("sonucAlani").innerHTML = sonucSayisi(0) + "<p>SonuÃ§ bulunamadÄ±.</p>";
             return;
         }
 
@@ -753,7 +753,7 @@ async function gitaAra() {
 
             htmlAkisi += `
                 <p style='margin: 20px 0; border-bottom: 1px solid #ccc; padding-bottom: 15px;'>
-                    <b style='color: #a30; font-size: 1.1em;'>Bölüm ${item.chapter_number}:${ayetNo}</b><br><br>
+                    <b style='color: #a30; font-size: 1.1em;'>BÃ¶lÃ¼m ${item.chapter_number}:${ayetNo}</b><br><br>
                     <span style='font-family: Amiri, serif; font-size: 22px; display: block; line-height: 1.5; direction: ltr; unicode-bidi: embed; text-align: left;'>${temizText}</span><br>
                     <span style='display: block; line-height: 1.6; margin-top: 10px;'>${vTur}</span>
                 </p>`;
@@ -761,7 +761,7 @@ async function gitaAra() {
         
         id("sonucAlani").innerHTML = htmlAkisi;
     } catch (hata) {
-        id("sonucAlani").innerHTML = "<p>Bir hata oluştu: " + hata.message + "</p>";
+        id("sonucAlani").innerHTML = "<p>Bir hata oluÅŸtu: " + hata.message + "</p>";
     }
 }
 
@@ -795,12 +795,12 @@ async function gitaAra() {
 
 
 
-// Dosyaları açmak için odaklama özellikli güncellenmiş fonksiyon
+// DosyalarÄ± aÃ§mak iÃ§in odaklama Ã¶zellikli gÃ¼ncellenmiÅŸ fonksiyon
 async function dosyayiAc(url, dil, dosyaAdi) {
-    // "TalmudOkuyucu" ismi ile hep aynı pencereyi kullanıyoruz
+    // "TalmudOkuyucu" ismi ile hep aynÄ± pencereyi kullanÄ±yoruz
     let yeniPencere = window.open("", "TalmudOkuyucu");
     
-    // Pencere içeriğini tamamen yeniden yazıyoruz
+    // Pencere iÃ§eriÄŸini tamamen yeniden yazÄ±yoruz
     yeniPencere.document.open();
     yeniPencere.document.write(`
         <html>
@@ -816,13 +816,13 @@ async function dosyayiAc(url, dil, dosyaAdi) {
         </head>
         <body>
             <h1>${dosyaAdi}</h1>
-            <div id="icerik">Yükleniyor...</div>
+            <div id="icerik">YÃ¼kleniyor...</div>
         </body>
         </html>
     `);
     yeniPencere.document.close();
     
-    // Pencereyi ön plana getir
+    // Pencereyi Ã¶n plana getir
     yeniPencere.focus();
 
     try {
@@ -831,7 +831,7 @@ async function dosyayiAc(url, dil, dosyaAdi) {
         let lines = text.split('\n');
         
         let container = yeniPencere.document.getElementById('icerik');
-        container.innerHTML = ""; // Yükleniyor yazısını sil
+        container.innerHTML = ""; // YÃ¼kleniyor yazÄ±sÄ±nÄ± sil
 
         for (let line of lines) {
             if (line.trim().length > 0) {
@@ -845,31 +845,31 @@ async function dosyayiAc(url, dil, dosyaAdi) {
             }
         }
     } catch (e) {
-        yeniPencere.document.getElementById('icerik').innerText = "Hata oluştu: " + e.message;
+        yeniPencere.document.getElementById('icerik').innerText = "Hata oluÅŸtu: " + e.message;
     }
 }
 
-// Dil algılama fonksiyonu
+// Dil algÄ±lama fonksiyonu
 async function diliAlgila(metin) {
     try {
         var url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=en&dt=t&q=" + encodeURIComponent(metin);
         var response = await fetch(url);
         var veri = await response.json();
-        // Google, cevabın içinde algılanan dili [2] indexinde verir
+        // Google, cevabÄ±n iÃ§inde algÄ±lanan dili [2] indexinde verir
         return veri[2]; 
     } catch (e) {
-        return "en"; // Hata olursa varsayılan olarak İngilizce kabul et
+        return "en"; // Hata olursa varsayÄ±lan olarak Ä°ngilizce kabul et
     }
 }
 
 async function talmudAra(talmudTuru) {
     var arananKelime = id("myInput").value.trim();
     if (arananKelime.length < 3) {
-        id("sonucAlani").innerHTML = "<p>Lütfen en az 3 karakter girin.</p>";
+        id("sonucAlani").innerHTML = "<p>LÃ¼tfen en az 3 karakter girin.</p>";
         return;
     }
 
-    // CSS eklemeleri buraya (eğer daha önce yoksa)
+    // CSS eklemeleri buraya (eÄŸer daha Ã¶nce yoksa)
     var style = document.createElement('style');
     style.innerHTML = `
         .bayrakLink { opacity: 0.5; transition: opacity 0.3s ease; cursor: pointer; }
@@ -878,7 +878,7 @@ async function talmudAra(talmudTuru) {
     document.head.appendChild(style);
 
     id("sonucAlani").innerHTML = 
-        `<p id='talmudDurum'>${talmudTuru} taranıyor, lütfen bekleyin...</p>` +
+        `<p id='talmudDurum'>${talmudTuru} taranÄ±yor, lÃ¼tfen bekleyin...</p>` +
         `<p id='pBarDurum' style='width:100%; background:#eee; height:12px; border-radius:4px;'><span id='pBar' style='display:block; width:0%; height:100%; background:#e76f51; border-radius:4px;'></span></p>` +
         `<div id='sonucListesi'></div>`;
 
@@ -937,17 +937,17 @@ async function talmudAra(talmudTuru) {
 
             let yuzde = Math.round(((i + 1) / toplamDosya) * 100);
             pBar.style.width = yuzde + "%";
-            talmudDurum.innerHTML = `<b>${dosyaAdi}</b> taranıyor ${i + 1}/${toplamDosya} dosya (Bulunan: ${bulunanSayac})`;
+            talmudDurum.innerHTML = `<b>${dosyaAdi}</b> taranÄ±yor ${i + 1}/${toplamDosya} dosya (Bulunan: ${bulunanSayac})`;
         }
 
         if (bulunanSayac === 0) {
-            sonucListesi.innerHTML = "<p>Sonuç bulunamadı.</p>";
+            sonucListesi.innerHTML = "<p>SonuÃ§ bulunamadÄ±.</p>";
         } else {
-            talmudDurum.innerHTML = `Arama tamamlandı. Toplam ${bulunanSayac} sonuç bulundu.`;
+            talmudDurum.innerHTML = `Arama tamamlandÄ±. Toplam ${bulunanSayac} sonuÃ§ bulundu.`;
         }
 
     } catch (hata) {
-        id("sonucAlani").innerHTML = "<p>Talmud aranırken bir hata oluştu: " + hata.message + "</p>";
+        id("sonucAlani").innerHTML = "<p>Talmud aranÄ±rken bir hata oluÅŸtu: " + hata.message + "</p>";
     }
 }
 
@@ -961,7 +961,7 @@ async function talmudAra(talmudTuru) {
 
 
 async function bibleGetir(aralik) {
-    id("sonucAlani").innerHTML = "<p>Lütfen bekleyin, veriler analiz ediliyor...</p>";
+    id("sonucAlani").innerHTML = "<p>LÃ¼tfen bekleyin, veriler analiz ediliyor...</p>";
 
     try {
         const response = await fetch('Books/bible.json');
@@ -981,11 +981,11 @@ async function bibleGetir(aralik) {
         const aranan = id("myInput").value.trim();
         if (aranan.length < 3) return;
 
-        // ^ başlangıç veya \s boşluk. Ardından aranan kelime.
-        // Kelimenin devamı herhangi bir karakter olabilir (adamlar, adamlarda vb.)
+        // ^ baÅŸlangÄ±Ã§ veya \s boÅŸluk. ArdÄ±ndan aranan kelime.
+        // Kelimenin devamÄ± herhangi bir karakter olabilir (adamlar, adamlarda vb.)
         const kontrolRegex = new RegExp("(^|\\s)" + aranan, "i");
         
-        // Vurgulama için global regex: Sadece kelime başlangıcını yakalar
+        // Vurgulama iÃ§in global regex: Sadece kelime baÅŸlangÄ±cÄ±nÄ± yakalar
         const vurguRegex = new RegExp("((^|\\s)" + aranan + ")", "gi");
 
         const bulunanlar = seciliAyetler.filter(verse => 
@@ -995,8 +995,8 @@ async function bibleGetir(aralik) {
         let htmlAkisi = sonucSayisi(bulunanlar.length);
         
         bulunanlar.forEach((item, i) => {
-            // Metindeki eşleşmeleri vurgula
-            // $1 yakalanan grup (boşluk veya başlangıç + aranan kelime)
+            // Metindeki eÅŸleÅŸmeleri vurgula
+            // $1 yakalanan grup (boÅŸluk veya baÅŸlangÄ±Ã§ + aranan kelime)
             let metin = item.text.replace(vurguRegex, "<mark>$1</mark>");
             
             htmlAkisi += `
@@ -1011,8 +1011,8 @@ async function bibleGetir(aralik) {
         id("sonucAlani").innerHTML = htmlAkisi;
 
     } catch (error) {
-        console.error("Bible yükleme hatası:", error);
-        id("sonucAlani").innerHTML = "<p>Veri yüklenirken bir hata oluştu.</p>";
+        console.error("Bible yÃ¼kleme hatasÄ±:", error);
+        id("sonucAlani").innerHTML = "<p>Veri yÃ¼klenirken bir hata oluÅŸtu.</p>";
     }
 }
 
@@ -1027,9 +1027,9 @@ async function tefsirAra(tefsirAdi) {
         <div id="progressContainer" style="width:100%; background:#eee; margin-bottom:15px; height:8px;">
             <div id="progressBar" style="width:0%; height:100%; background:#a30;"></div>
         </div>
-        <p id="progressText" style="color:#70757a;">Taranıyor...</p>`;
+        <p id="progressText" style="color:#70757a;">TaranÄ±yor...</p>`;
 
-    const sozluk = { "Ey": ["nî Ë", "îY"] };
+    const sozluk = { "Ey": ["nÃ® Ã‹", "Ã®Y"] };
     var url = "Tefsir/" + tefsirAdi + ".json";
     var sureOnbellek = {};
     var gorunenTefsirler = new Set();
@@ -1038,8 +1038,8 @@ async function tefsirAra(tefsirAdi) {
         var response = await fetch(url);
         var veri = await response.json();
         
-        // Kelime sınırı kontrolü için Regex (Başında boşluk veya başlangıç, sonunda boşluk veya noktalama işaretleri)
-        // \b kelime sınırını ifade eder, ancak Türkçe karakterler için esnek bir yapı kuruyoruz:
+        // Kelime sÄ±nÄ±rÄ± kontrolÃ¼ iÃ§in Regex (BaÅŸÄ±nda boÅŸluk veya baÅŸlangÄ±Ã§, sonunda boÅŸluk veya noktalama iÅŸaretleri)
+        // \b kelime sÄ±nÄ±rÄ±nÄ± ifade eder, ancak TÃ¼rkÃ§e karakterler iÃ§in esnek bir yapÄ± kuruyoruz:
         var aramaRegex = new RegExp("(^|\\s|[\\.,;!?])" + arananKelime + "($|\\s|[\\.,;!?])", "gi");
         
         var eslesenler = [];
@@ -1049,7 +1049,7 @@ async function tefsirAra(tefsirAdi) {
                 bozuklar.forEach(b => { metin = metin.split(b).join(duzgun); });
             }
             
-            // Regex ile tam kelime eşleşmesi kontrolü
+            // Regex ile tam kelime eÅŸleÅŸmesi kontrolÃ¼
             if (aramaRegex.test(metin)) {
                 eslesenler.push({ key, metin });
             }
@@ -1077,12 +1077,12 @@ async function tefsirAra(tefsirAdi) {
                     let mData = await mRes.json();
                     sureOnbellek[sureNo] = mData.data.ayahs;
                 } catch (e) {
-                    console.error("API Hatası:", e);
+                    console.error("API HatasÄ±:", e);
                     sureOnbellek[sureNo] = []; 
                 }
             }
 
-            let dogruMeal = sureOnbellek[sureNo][ayetNo - 1]?.text || "Meal bulunamadı.";
+            let dogruMeal = sureOnbellek[sureNo][ayetNo - 1]?.text || "Meal bulunamadÄ±.";
             
             // Regex ile vurgulama
             let vurguluMetin = metin.replace(aramaRegex, (match, p1, p2) => {
@@ -1090,12 +1090,12 @@ async function tefsirAra(tefsirAdi) {
             });
 
             htmlAkisi += `
-                <p style='color:#a30; font-weight:bold; margin-bottom:5px;'>“${dogruMeal}” (${sureAdlari[sureNo - 1]} ${ayetNo})</p>
+                <p style='color:#a30; font-weight:bold; margin-bottom:5px;'>â€œ${dogruMeal}â€ (${sureAdlari[sureNo - 1]} ${ayetNo})</p>
                 <p style='margin-bottom:20px; color:#2c2c2c;'>${gecerliSonucSayisi}) ${vurguluMetin}</p>`;
             
             let yuzde = ((i + 1) / toplam) * 100;
             id("progressBar").style.width = yuzde + "%";
-            id("progressText").innerText = "İşleniyor: " + (i + 1) + " / " + toplam;
+            id("progressText").innerText = "Ä°ÅŸleniyor: " + (i + 1) + " / " + toplam;
         }
 
         id("sonucAlani").innerHTML = sonucSayisi(gecerliSonucSayisi) + htmlAkisi;
