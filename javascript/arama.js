@@ -1091,93 +1091,409 @@ async function tefsirAra(tefsirAdi) {
 
 }
 
+var risaleler = {
+  "RisaleTxt": {
+    "AnaDosyalar": [
+      "sonuc.txt",
+      "Yeni Metin Belgesi.txt"
+    ],
+    "Kategoriler": {
+      "01 Sözler": [
+        "Sözler-01-Birinci Söz.txt",
+        "Sözler-02-İkinci Söz.txt",
+        "Sözler-03-Üçüncü Söz.txt",
+        "Sözler-04-Dördüncü Söz.txt",
+        "Sözler-05-Beşinci Söz.txt",
+        "Sözler-06-Altıncı Söz.txt",
+        "Sözler-07-Yedinci Söz.txt",
+        "Sözler-08-Sekizinci Söz.txt",
+        "Sözler-09-Dokuzuncu Söz.txt",
+        "Sözler-10-Onuncu Söz.txt",
+        "Sözler-11-On Birinci Söz.txt",
+        "Sözler-12-On İkinci Söz.txt",
+        "Sözler-13-On Üçüncü Söz.txt",
+        "Sözler-14-On Dördüncü Söz.txt",
+        "Sözler-15-On Beşinci Söz.txt",
+        "Sözler-16-On Altıncı Söz.txt",
+        "Sözler-17-On Yedinci Söz.txt",
+        "Sözler-18-On Sekizinci Söz.txt",
+        "Sözler-19-On Dokuzuncu Söz.txt",
+        "Sözler-20-Yirminci Söz.txt",
+        "Sözler-21-Yirmi Birinci Söz.txt",
+        "Sözler-22-Yirmi İkinci Söz.txt",
+        "Sözler-23-Yirmi Üçüncü Söz.txt",
+        "Sözler-24-Yirmi Dördüncü Söz.txt",
+        "Sözler-25-Yirmi Beşinci Söz.txt",
+        "Sözler-26-Yirmi Altıncı Söz.txt",
+        "Sözler-27-Yirmi Yedinci Söz.txt",
+        "Sözler-28-Yirmi Sekizinci Söz.txt",
+        "Sözler-29-Yirmi Dokuzuncu Söz.txt",
+        "Sözler-30-Otuzuncu Söz.txt",
+        "Sözler-31-Otuz Birinci Söz.txt",
+        "Sözler-32-Otuz İkinci Söz.txt",
+        "Sözler-33-Otuz Üçüncü Söz.txt",
+        "Sözler-34-Lemaat (Sözler).txt",
+        "Sözler-35-Konferans (Sözler).txt",
+        "Sözler-36-Fihrist (Sözler).txt"
+      ],
+      "02 Mektubat": [
+        "Mektubat-01-Birinci Mektup.txt",
+        "Mektubat-02-İkinci Mektup.txt",
+        "Mektubat-03-Üçüncü Mektup.txt",
+        "Mektubat-04-Dördüncü Mektup.txt",
+        "Mektubat-05-Beşinci Mektup.txt",
+        "Mektubat-06-Altıncı Mektup.txt",
+        "Mektubat-07-Yedinci Mektup.txt",
+        "Mektubat-08-Sekizinci Mektup.txt",
+        "Mektubat-09-Dokuzuncu Mektup.txt",
+        "Mektubat-10-Onuncu Mektup.txt",
+        "Mektubat-11-On Birinci Mektup.txt",
+        "Mektubat-12-On İkinci Mektup.txt",
+        "Mektubat-13-On Üçüncü Mektup.txt",
+        "Mektubat-14-On Dördüncü Mektup.txt",
+        "Mektubat-15-On Beşinci Mektup.txt",
+        "Mektubat-16-On Altıncı Mektup.txt",
+        "Mektubat-17-On Yedinci Mektup.txt",
+        "Mektubat-18-On Sekizinci Mektup.txt",
+        "Mektubat-19-On Dokuzuncu Mektup.txt",
+        "Mektubat-20-Yirminci Mektup.txt",
+        "Mektubat-21-Yirmi Birinci Mektup.txt",
+        "Mektubat-22-Yirmi İkinci Mektup.txt",
+        "Mektubat-23-Yirmi Üçüncü Mektup.txt",
+        "Mektubat-24-Yirmi Dördüncü Mektup.txt",
+        "Mektubat-25-Yirmi Beşinci Mektup.txt",
+        "Mektubat-26-Yirmi Altıncı Mektup.txt",
+        "Mektubat-27-Yirmi Yedinci Mektup.txt",
+        "Mektubat-28-Yirmi Sekizinci Mektup.txt",
+        "Mektubat-29-Yirmi Dokuzuncu Mektup.txt",
+        "Mektubat-30-Otuzuncu Mektup.txt",
+        "Mektubat-31-Otuz Birinci Mektup.txt",
+        "Mektubat-32-Otuz İkinci Mektup.txt",
+        "Mektubat-33-Otuz Üçüncü Mektup.txt",
+        "Mektubat-34-İşarat-ı Gaybiye Hakkında Bir Takriz.txt",
+        "Mektubat-35-Hakikat Çekirdekleri.txt",
+        "Mektubat-36-Gönüller Fatihi Büyük Üstada.txt",
+        "Mektubat-37-Fihriste-i Mektubat.txt",
+        "Mektubat-38-Hakikat Işıkları.txt",
+        "Mektubat-39-Dua (Mektubat).txt"
+      ],
+      "03 Lem'alar": [
+        "Lem'alar-01-Birinci Lem'a.txt",
+        "Lem'alar-02-İkinci Lem'a.txt",
+        "Lem'alar-03-Üçüncü Lem'a.txt",
+        "Lem'alar-04-Dördüncü Lem'a.txt",
+        "Lem'alar-05-Beşinci Lem'a.txt",
+        "Lem'alar-06-Altıncı Lem'a.txt",
+        "Lem'alar-07-Yedinci Lem'a.txt",
+        "Lem'alar-08-Sekizinci Lem'a.txt",
+        "Lem'alar-09-Dokuzuncu Lem'a.txt",
+        "Lem'alar-10-Onuncu Lem'a.txt",
+        "Lem'alar-11-On Birinci Lem'a.txt",
+        "Lem'alar-12-On İkinci Lem'a.txt",
+        "Lem'alar-13-On Üçüncü Lem'a.txt",
+        "Lem'alar-14-On Dördüncü Lem'a.txt",
+        "Lem'alar-15-On Beşinci Lem'a.txt",
+        "Lem'alar-16-On Altıncı Lem'a.txt",
+        "Lem'alar-17-On Yedinci Lem'a.txt",
+        "Lem'alar-18-On Sekizinci Lem'a.txt",
+        "Lem'alar-19-On Dokuzuncu Lem'a.txt",
+        "Lem'alar-20-Yirminci Lem'a.txt",
+        "Lem'alar-21-Yirmi Birinci Lem'a.txt",
+        "Lem'alar-22-Yirmi İkinci Lem'a.txt",
+        "Lem'alar-23-Yirmi Üçüncü Lem'a.txt",
+        "Lem'alar-24-Yirmi Dördüncü Lem'a.txt",
+        "Lem'alar-25-Yirmi Beşinci Lem'a.txt",
+        "Lem'alar-26-Yirmi Altıncı Lem'a.txt",
+        "Lem'alar-27-Yirmi Yedinci Lem'a.txt",
+        "Lem'alar-28-Yirmi Sekizinci Lem'a.txt",
+        "Lem'alar-29-Yirmi Dokuzuncu Lem'a.txt",
+        "Lem'alar-30-Otuzuncu Lem'a.txt",
+        "Lem'alar-31-Otuz Birinci Lem'a.txt",
+        "Lem'alar-32-Otuz İkinci Lem'a.txt",
+        "Lem'alar-33-Otuz Üçüncü Lem'a.txt",
+        "Lem'alar-34-Münâcat (Lem'alar).txt",
+        "Lem'alar-35-Fihrist (Lem'alar).txt",
+        "Lem'alar-36-Dua (Lem'alar).txt"
+      ],
+      "04 Şuâlar": [
+        "Şuâlar-01-Birinci Şuâ.txt",
+        "Şuâlar-02-İkinci Şuâ.txt",
+        "Şuâlar-03-Üçüncü Şuâ.txt",
+        "Şuâlar-04-Dördüncü Şuâ.txt",
+        "Şuâlar-05-Beşinci Şuâ.txt",
+        "Şuâlar-06-Altıncı Şuâ.txt",
+        "Şuâlar-07-Yedinci Şuâ.txt",
+        "Şuâlar-08-Sekizinci Şuâ.txt",
+        "Şuâlar-09-Dokuzuncu Şuâ.txt",
+        "Şuâlar-10-On Birinci Şuâ.txt",
+        "Şuâlar-11-On İkinci Şuâ.txt",
+        "Şuâlar-12-On Üçüncü Şuâ.txt",
+        "Şuâlar-13-On Dördüncü Şuâ.txt",
+        "Şuâlar-14-On Beşinci Şuâ.txt",
+        "Şuâlar-15-Yirmi Dokuzuncu Lem'a'dan İkinci Bab.txt",
+        "Şuâlar-16-Eddâî.txt",
+        "Şuâlar-17-Dua (Şuâlar).txt",
+        "Şuâlar-18-İçindekiler (Şuâlar).txt"
+      ],
+      "05 Tarihçe-i Hayat": [
+        "Tarihçe-i Hayat-01-Ön söz.txt",
+        "Tarihçe-i Hayat-02-Giriş.txt",
+        "Tarihçe-i Hayat-03-İlk Hayatı.txt",
+        "Tarihçe-i Hayat-04-Barla Hayatı.txt",
+        "Tarihçe-i Hayat-05-Eskişehir Hayatı.txt",
+        "Tarihçe-i Hayat-06-Kastamonu Hayatı.txt",
+        "Tarihçe-i Hayat-07-Denizli Hayatı.txt",
+        "Tarihçe-i Hayat-08-Emirdağ Hayatı.txt",
+        "Tarihçe-i Hayat-09-Afyon Hayatı.txt",
+        "Tarihçe-i Hayat-10-Isparta Hayatı.txt",
+        "Tarihçe-i Hayat-11-Hariç Memleketler.txt",
+        "Tarihçe-i Hayat-12-Bedîüzzaman ve Risale-i Nur.txt",
+        "Tarihçe-i Hayat-13-Dua (Tarihçe-i Hayatı).txt",
+        "Tarihçe-i Hayat-14-İçindekiler.txt"
+      ],
+      "06 Mesnevî-i Nuriye": [
+        "Mesnevî-i Nuriye-01-İ'tizar.txt",
+        "Mesnevî-i Nuriye-02-Mukaddime.txt",
+        "Mesnevî-i Nuriye-03-Lem'alar Risalesi.txt",
+        "Mesnevî-i Nuriye-04-Reşhalar.txt",
+        "Mesnevî-i Nuriye-05-Lâsiyyemalar.txt",
+        "Mesnevî-i Nuriye-06-Katre.txt",
+        "Mesnevî-i Nuriye-07-Hubab.txt",
+        "Mesnevî-i Nuriye-08-Habbe.txt",
+        "Mesnevî-i Nuriye-09-Zühre.txt",
+        "Mesnevî-i Nuriye-10-Zerre.txt",
+        "Mesnevî-i Nuriye-11-Şemme Risalesi.txt",
+        "Mesnevî-i Nuriye-12-Onuncu Risale.txt",
+        "Mesnevî-i Nuriye-13-Şule.txt",
+        "Mesnevî-i Nuriye-14-Nokta.txt",
+        "Mesnevî-i Nuriye-15-Münderecat Hakkında.txt",
+        "Mesnevî-i Nuriye-16-Fihrist (Mesnevî).txt"
+      ],
+      "07 İşaratü'l-i'caz": [
+        "İşaratü'l-i'caz-01-Tenbih.txt",
+        "İşaratü'l-i'caz-02-İfadetü'l-Meram.txt",
+        "İşaratü'l-i'caz-03-Kur'an'ın Tarifi.txt",
+        "İşaratü'l-i'caz-04-Fatiha Suresi.txt",
+        "İşaratü'l-i'caz-05-Bakara Suresi 1- 2- 3. âyetler.txt",
+        "İşaratü'l-i'caz-06-Bakara Suresi 4-5. âyetler.txt",
+        "İşaratü'l-i'caz-07-Bakara Suresi 6. âyet.txt",
+        "İşaratü'l-i'caz-08-Bakara Suresi 7. âyet.txt",
+        "İşaratü'l-i'caz-09-Bakara Suresi 8. âyet.txt",
+        "İşaratü'l-i'caz-10-Bakara Suresi 9-10. âyetler.txt",
+        "İşaratü'l-i'caz-11-Bakara Suresi 11-12. âyetler.txt",
+        "İşaratü'l-i'caz-12-Bakara Suresi 13. âyet.txt",
+        "İşaratü'l-i'caz-13-Bakara Suresi 14-15. âyetler.txt",
+        "İşaratü'l-i'caz-14-Bakara Suresi 16. âyet.txt",
+        "İşaratü'l-i'caz-15-Bakara Suresi 17-18-19-20. âyetler.txt",
+        "İşaratü'l-i'caz-16-Bakara Suresi 21-22. âyetler.txt",
+        "İşaratü'l-i'caz-17-Bakara Suresi 23-24. âyetler.txt",
+        "İşaratü'l-i'caz-18-Bakara Suresi 25. âyet.txt",
+        "İşaratü'l-i'caz-19-Bakara Suresi 26-27. âyetler.txt",
+        "İşaratü'l-i'caz-20-Bakara Suresi 28. âyet.txt",
+        "İşaratü'l-i'caz-21-Bakara Suresi 29. âyet.txt",
+        "İşaratü'l-i'caz-22-Bakara Suresi 30. âyet.txt",
+        "İşaratü'l-i'caz-23-Bakara Suresi 31-32-33. âyetler.txt",
+        "İşaratü'l-i'caz-24-Ecnebi Feylesofların Kur'an Hakkındaki Beyanatları.txt",
+        "İşaratü'l-i'caz-25-Mehmed Kayalar'ın Bir Müdafaası.txt",
+        "İşaratü'l-i'caz-26-Dua (İşaratü'l-İ'caz).txt",
+        "İşaratü'l-i'caz-27-Fihrist (İşaratü'l-İ'caz).txt"
+      ],
+      "08 Sikke-i Tasdik-i Gaybî": [
+        "Sikke-i Tasdik-i Gaybî-01-Parlak Fıkralar ve Güzel Mektuplar 1.txt",
+        "Sikke-i Tasdik-i Gaybî-02-Birinci Şuâ.txt",
+        "Sikke-i Tasdik-i Gaybî-03-Sekizinci Şuâ.txt",
+        "Sikke-i Tasdik-i Gaybî-04-On Sekizinci Lem'a.txt",
+        "Sikke-i Tasdik-i Gaybî-05-Yirmi Sekizinci Lem'a.txt",
+        "Sikke-i Tasdik-i Gaybî-06-Sekizinci Lem'a.txt",
+        "Sikke-i Tasdik-i Gaybî-07-Parlak Fıkralar ve Güzel Mektuplar 2.txt",
+        "Sikke-i Tasdik-i Gaybî-08-Dua (Sikke-i Tasdik-i Gaybî).txt"
+      ],
+      "09 Barla Lâhikası": [
+        "Barla Lâhikası-01-Barla Lâhikası - Takdim.txt",
+        "Barla Lâhikası-02-Barla Lâhikası - Yedinci Risale.txt",
+        "Barla Lâhikası-03-Barla Lâhikası s.21-39.txt",
+        "Barla Lâhikası-04-Barla Lâhikası s.40-58.txt",
+        "Barla Lâhikası-05-Barla Lâhikası s.59-80.txt",
+        "Barla Lâhikası-06-Barla Lâhikası s.80-102.txt",
+        "Barla Lâhikası-07-Barla Lâhikası s.103-121.txt",
+        "Barla Lâhikası-08-Barla Lâhikası s.121-146.txt",
+        "Barla Lâhikası-09-Barla Lâhikası s.146-159.txt",
+        "Barla Lâhikası-10-Barla Lâhikası s.160-180.txt",
+        "Barla Lâhikası-11-Barla Lâhikası s.181-201.txt",
+        "Barla Lâhikası-12-Barla Lâhikası s.202-221.txt",
+        "Barla Lâhikası-13-Barla Lâhikası s.221-240.txt",
+        "Barla Lâhikası-14-Barla Lâhikası s.241-261.txt",
+        "Barla Lâhikası-15-Barla Lâhikası s.262-280.txt",
+        "Barla Lâhikası-16-Barla Lâhikası s.280-299.txt",
+        "Barla Lâhikası-17-Barla Lâhikası s.300-321.txt",
+        "Barla Lâhikası-18-Barla Lâhikası s.321-340.txt",
+        "Barla Lâhikası-19-Barla Lâhikası s.340-362.txt",
+        "Barla Lâhikası-20-Barla Lâhikası s.363-392.txt"
+      ],
+      "10 Kastamonu Lâhikası": [
+        "Kastamonu Lâhikası-01-Kastamonu Lâhikası - Takdim.txt",
+        "Kastamonu Lâhikası-02-Kastamonu Lâhikası s.10-30.txt",
+        "Kastamonu Lâhikası-03-Kastamonu Lâhikası s.30-51.txt",
+        "Kastamonu Lâhikası-04-Kastamonu Lâhikası s.52-69.txt",
+        "Kastamonu Lâhikası-05-Kastamonu Lâhikası s.70-91.txt",
+        "Kastamonu Lâhikası-06-Kastamonu Lâhikası s.91-109.txt",
+        "Kastamonu Lâhikası-07-Kastamonu Lâhikası s.110-129.txt",
+        "Kastamonu Lâhikası-08-Kastamonu Lâhikası s.130-149.txt",
+        "Kastamonu Lâhikası-09-Kastamonu Lâhikası s.150-166 (Lemaat'tan).txt",
+        "Kastamonu Lâhikası-10-Kastamonu Lâhikası s.167-189.txt",
+        "Kastamonu Lâhikası-11-Kastamonu Lâhikası s.190-210.txt",
+        "Kastamonu Lâhikası-12-Kastamonu Lâhikası s.211-230.txt",
+        "Kastamonu Lâhikası-13-Kastamonu Lâhikası s.231-255.txt"
+      ],
+      "11 Emirdağ Lâhikası 1": [
+        "Emirdağ Lâhikası 1-01-Emirdağ Lâhikası - I - Takdim.txt",
+        "Emirdağ Lâhikası 1-02-Emirdağ Lâhikası - I s.10-31.txt",
+        "Emirdağ Lâhikası 1-03-Emirdağ Lâhikası - I s.31-50.txt",
+        "Emirdağ Lâhikası 1-04-Emirdağ Lâhikası - I s.50-69.txt",
+        "Emirdağ Lâhikası 1-05-Emirdağ Lâhikası - I s.70-90.txt",
+        "Emirdağ Lâhikası 1-06-Emirdağ Lâhikası - I s.90-110.txt",
+        "Emirdağ Lâhikası 1-07-Emirdağ Lâhikası - I s.110-130.txt",
+        "Emirdağ Lâhikası 1-08-Emirdağ Lâhikası - I s.131-150.txt",
+        "Emirdağ Lâhikası 1-09-Emirdağ Lâhikası - I s.150-170.txt",
+        "Emirdağ Lâhikası 1-10-Emirdağ Lâhikası - I s.170-190.txt",
+        "Emirdağ Lâhikası 1-11-Emirdağ Lâhikası - I s.190-211.txt",
+        "Emirdağ Lâhikası 1-12-Emirdağ Lâhikası - I s.212-230.txt",
+        "Emirdağ Lâhikası 1-13-Emirdağ Lâhikası - I s.230-251.txt",
+        "Emirdağ Lâhikası 1-14-Emirdağ Lâhikası - I s.251-270.txt",
+        "Emirdağ Lâhikası 1-15-Emirdağ Lâhikası - I s.271-288.txt"
+      ],
+      "12 Emirdağ Lâhikası 2": [
+        "Emirdağ Lâhikası 2-01-Emirdağ Lâhikası - I.txt",
+        "Emirdağ Lâhikası 2-02-Emirdağ Lâhikası - II s.6-26.txt",
+        "Emirdağ Lâhikası 2-03-Emirdağ Lâhikası - II s.27-50.txt",
+        "Emirdağ Lâhikası 2-04-Emirdağ Lâhikası - II s.51-70.txt",
+        "Emirdağ Lâhikası 2-05-Emirdağ Lâhikası - II s.70-90.txt",
+        "Emirdağ Lâhikası 2-06-Emirdağ Lâhikası - II s.91-109.txt",
+        "Emirdağ Lâhikası 2-07-Emirdağ Lâhikası - II s.110-128.txt",
+        "Emirdağ Lâhikası 2-08-Emirdağ Lâhikası - II s.129-148.txt",
+        "Emirdağ Lâhikası 2-09-Emirdağ Lâhikası - II s.149-170.txt",
+        "Emirdağ Lâhikası 2-10-Emirdağ Lâhikası - II s.171-189.txt",
+        "Emirdağ Lâhikası 2-11-Emirdağ Lâhikası - II s.190-210.txt",
+        "Emirdağ Lâhikası 2-12-Emirdağ Lâhikası - II s.210-229.txt",
+        "Emirdağ Lâhikası 2-13-Emirdağ Lâhikası - II s.230-247.txt"
+      ],
+      "13 Asâ-yı Musa": [
+        "Asâ-yı Musa-01-Mukaddimat.txt",
+        "Asâ-yı Musa-02-Asâ-yı Musa'dan Birinci Kısım.txt",
+        "Asâ-yı Musa-03-Birinci Mesele.txt",
+        "Asâ-yı Musa-04-İkinci Mesele.txt",
+        "Asâ-yı Musa-05-Üçüncü Mesele.txt",
+        "Asâ-yı Musa-06-Dördüncü Mesele.txt",
+        "Asâ-yı Musa-07-Beşinci Mesele.txt",
+        "Asâ-yı Musa-08-Altıncı Mesele.txt",
+        "Asâ-yı Musa-09-Yedinci Mesele.txt",
+        "Asâ-yı Musa-10-Sekizinci Mesele.txt",
+        "Asâ-yı Musa-11-Dokuzuncu Mesele.txt",
+        "Asâ-yı Musa-12-Onuncu Mesele.txt",
+        "Asâ-yı Musa-13-On Birinci Mesele.txt",
+        "Asâ-yı Musa-14-Asâ-yı Musa'dan İkinci Kısım.txt",
+        "Asâ-yı Musa-15-Birinci Hüccet-i İmaniye.txt",
+        "Asâ-yı Musa-16-İkinci Hüccet-i İmaniye.txt",
+        "Asâ-yı Musa-17-Üçüncü Hüccet-i İmaniye.txt",
+        "Asâ-yı Musa-18-Dördüncü Hüccet-i İmaniye.txt",
+        "Asâ-yı Musa-19-Beşinci Hüccet-i İmaniye.txt",
+        "Asâ-yı Musa-20-Altıncı Hüccet-i İmaniye.txt",
+        "Asâ-yı Musa-21-Yedinci Hüccet-i İmaniye.txt",
+        "Asâ-yı Musa-22-Sekizinci Hüccet-i İmaniye.txt",
+        "Asâ-yı Musa-23-Dokuzuncu Hüccet-i İmaniye.txt",
+        "Asâ-yı Musa-24-Onuncu Hüccet-i İmaniye.txt",
+        "Asâ-yı Musa-25-On Birinci Hüccet-i İmaniye.txt",
+        "Asâ-yı Musa-26-Fihrist (Asâ-yı Musa).txt"
+      ],
+      "14 Küçük Kitaplar": [
+        "Di·van-i Harb-i· Örfî.txt",
+        "Gençli·k Rehberi·.txt",
+        "Hanimlar Rehberi·.txt",
+        "Hutbe-i· Şami·ye.txt",
+        "Konferans.txt",
+        "Münazarat.txt",
+        "Nur Çeşmesi·.txt",
+        "Nur'un İlk Kapısı.txt",
+        "Sünuhat.txt",
+        "Tulûat.txt",
+        "İşarat.txt"
+      ],
+      "15 Muhakemat": [
+        "Muhakemat-01-Giriş.txt",
+        "Muhakemat-02-Birinci Makale.txt",
+        "Muhakemat-03-İkinci Makale.txt",
+        "Muhakemat-04-Üçüncü Makale.txt",
+        "Muhakemat-05-Fihrist (Muhakemat).txt",
+        "Muhakemat-06-Takriz.txt"
+      ]
+    }
+  }
+}
 
-// Risale-i Nur Arama Fonksiyonu - Silme ve Ezilme Sorunu Tamamen Düzeltilmiş Sürüm  
-async function risaleAra() {  
-    var arananKelime = id("myInput").value.trim();  
-    if (arananKelime.length < 3) {  
-        id("sonucAlani").innerHTML = "<p>Lütfen en az 3 karakter girin.</p>";  
-        return;  
-    }  
+
+
+async function risaleAra() {
+    var arananKelime = id("myInput").value.trim();
+    if (arananKelime.length < 3) return;
+
+    var sonucAlani = id("sonucAlani");
     
-    id("sonucAlani").innerHTML =  
-        "<p id='risaleDurum'>GitHub API üzerinden külliyat taranıyor...</p>" +  
-        "<div class='progress-container' id='pCont' style='display:block;'><div class='progress-bar' id='pBar'></div></div>";  
+    // Sabit yapı (Div yok, position yok, sadece p ve span)
+    sonucAlani.innerHTML = `
+        <p id="bilgiSatiri">Başlıyor...</p>
+        <p id="progressContainer" style="width:100%; height:8px; background:#eee; margin:5px 0;">
+            <span id="progressBar" style="display:block; width:0%; height:100%; background:#a30;"></span>
+        </p><br>
+        <p id="sonuclarListesi" style="margin:0;"></p>`;
 
-    var pBar = id("pBar");  
-    var risaleDurum = id("risaleDurum");  
-    pBar.style.width = "95%";  
+    var listeP = id("sonuclarListesi");
+    var bilgiSatiri = id("bilgiSatiri");
+    var progressBar = id("progressBar");
+    
+    var aramaRegex = new RegExp("(^|\\s|[\\.,;!?])" + arananKelime + "($|\\s|[\\.,;!?])", "gi");
+    var gecerliSonucSayisi = 0;
 
-    var repoOwner = "alitekdemir";  
-    var repoName = "Risale-i-Nur-Diyanet";  
+    var taranacakDosyalar = [];
+    for (var klasor in risaleler.RisaleTxt.Kategoriler) {
+        risaleler.RisaleTxt.Kategoriler[klasor].forEach(dosya => {
+            taranacakDosyalar.push({ klasor: klasor, dosya: dosya });
+        });
+    }
 
-    // Token "github_pat_..." metni içermeyen Hexadecimal formatta
-    // Bu dizi botlar tarafından "token" olarak algılanmaz.
-    var _hex_key = "6769746875625f7061745f3131424b5153585a41304b333337645433325065784a5f70597858315a6d68623463703830446e4f5a566e697646577533713567334d527066594c6a586d4c51394e4633445237445059444b4b66464a7648";
-    var _get_key = function(h) {
-        var r = "";
-        for (var i = 0; i < h.length; i += 2) r += String.fromCharCode(parseInt(h.substr(i, 2), 16));
-        return r;
-    };
+    var toplam = taranacakDosyalar.length;
 
-    var url = "https://api.github.com/search/code?q=" + encodeURIComponent(kucukHarf(arananKelime)) + "+repo:" + repoOwner + "/" + repoName + "+path:txt";  
+    for (let i = 0; i < toplam; i++) {
+        let item = taranacakDosyalar[i];
+        let url = "https://raw.githubusercontent.com/Akhenaton41/Dinler-Tarihi-Arama-Motoru/main/Books/RisaleTxt/" + 
+                  encodeURIComponent(item.klasor) + "/" + encodeURIComponent(item.dosya);
 
-    try {  
-        var response = await fetch(url, {  
-            headers: {  
-                "Accept": "application/vnd.github.v3.text-match+json",  
-                "Authorization": "Bearer " + _get_key(_hex_key)
-            }  
-        });  
+        // İnteraktif bilgi satırı
+        bilgiSatiri.innerHTML = "Taranıyor: <b>" + item.dosya + "</b> " + (i + 1) + "/" + toplam + " (" + gecerliSonucSayisi + " sonuç)";
 
-        if (!response.ok) {  
-            if (response.status === 401) throw new Error("Token geçersiz veya eksik.");  
-            if (response.status === 403) throw new Error("GitHub API kota sınırına takıldı.");  
-            throw new Error("GitHub sunucu hatası: " + response.status);  
-        }  
+        try {
+            let res = await fetch(url);
+            let metin = await res.text();
+            let satirlar = metin.split('\n');
+            
+            satirlar.forEach(satir => {
+                if (aramaRegex.test(satir)) {
+                    gecerliSonucSayisi++;
+                    let vurguluSatir = satir.replace(aramaRegex, (match, p1, p2) => {
+                        return p1 + "<mark>" + arananKelime + "</mark>" + p2;
+                    });
 
-        var veri = await response.json();  
-        var items = veri.items || [];  
+                    // Sonuçlar akışta alt alta ekleniyor
+                    listeP.innerHTML += `
+                        <p>
+                            <b style='color:#a30;'>${item.klasor} / ${item.dosya}</b><br>
+                            <span>${vurguluSatir}</span>
+                        </p>`;
+                }
+            });
+        } catch (e) { console.log("Hata: " + item.dosya); }
 
-        if (items.length === 0) {  
-            id("sonucAlani").innerHTML = sonucSayisi(0) + "<p>Külliyat içerisinde <b>\"" + arananKelime + "\"</b> ifadesiyle eşleşen bir metin bulunamadı.</p>";  
-            return;  
-        }  
+        progressBar.style.width = ((i + 1) / toplam * 100) + "%";
+    }
 
-        pBar.style.width = "80%";  
-        risaleDurum.innerHTML = "Sonuçlar listeleniyor...";  
-
-        var htmlAkisi = "";  
-        var lokalRegex = new RegExp("(" + arananKelime + ")", "gi");  
-
-        items.forEach(function(item, index) {  
-            var dosyaYolu = item.path;  
-            var parcalar = dosyaYolu.split("/");  
-            var kitapAdi = parcalar[1] ? decodeURIComponent(parcalar[1]) : "Külliyat";  
-            var dosyaAdi = parcalar[2] ? decodeURIComponent(parcalar[2]).replace(".txt", "") : decodeURIComponent(parcalar[1]);  
-
-            var pasajlar = "";  
-            if (item.text_matches && item.text_matches.length > 0) {  
-                item.text_matches.forEach(function(match) {  
-                    var hamPasaj = match.fragment;  
-                    var vurgulu = hamPasaj.replace(lokalRegex, "<mark>$1</mark>");  
-                    pasajlar += "... " + vurgulu + " ...<br>";  
-                });  
-            } else {  
-                pasajlar = "Eşleşen pasaj doğrudan çözülemedi.";  
-            }  
-
-            htmlAkisi += "<div style='display: block !important; clear: both !important; width: 100% !important; margin: 15px 0 !important; padding: 15px !important; background: #fff; border: 1px solid #eee; border-radius: 4px; box-sizing: border-box !important; height: auto !important; position: static !important;'>" +  
-                         "<span style='color: #a30 !important; font-weight: bold !important; display: block !important; margin-bottom: 8px !important; position: static !important;'>" + (index + 1) + ") " + kitapAdi + " / " + dosyaAdi + "</span>" +  
-                         "<p style='margin: 0 !important; padding: 0 !important; display: block !important; height: auto !important; max-height: none !important; overflow: visible !important; line-height: 1.6 !important; white-space: normal !important; word-break: break-word !important; position: static !important;'>" + pasajlar + "</p>" +  
-                         "</div>";  
-        });  
-
-        pBar.style.width = "100%";  
-        id("sonucAlani").innerHTML = sonucSayisi(items.length) + "<div style='clear: both !important; display: block !important; width: 100% !important; position: static !important;'>" + htmlAkisi + "</div>";  
-
-    } catch (hata) {  
-        id("sonucAlani").innerHTML = "<p style='color:red; font-weight:bold;'>Hata: " + hata.message + "</p>";  
-        console.error(hata);  
-    }  
+    bilgiSatiri.innerHTML = "Arama tamamlandı: Toplam " + gecerliSonucSayisi + " sonuç bulundu.";
 }
