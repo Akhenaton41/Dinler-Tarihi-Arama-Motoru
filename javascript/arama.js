@@ -162,7 +162,7 @@ function kurandaAra() {
         }
     };
 
-    const girdi$ = "http://api.alquran.cloud/v1/search/" + encodeURIComponent(aranan) + "/all/tr.diyanet";
+    const girdi$ = "https://api.alquran.cloud/v1/search/" + encodeURIComponent(aranan) + "/all/tr.diyanet";
     xmlhttp.open("GET", girdi$, true);
     xmlhttp.send();
 }
