@@ -1,26 +1,26 @@
 # Dinler Tarihi ve Kadim Metinler Arama Motoru
 
-Bu proje; Tevrat, İncil, Zebur, Kur'an-ı Kerim, hadis külliyatları, tefsirler, Risale-i Nur, Avesta, Bhagavad Gita, Rigveda, Talmud ve Mişna gibi kadim metinler üzerinde hızlı ve kapsamlı aramalar yapmanızı sağlayan bir dijital araştırma aracıdır.
+Bu proje; insanlık tarihinin en köklü inanç sistemlerine ve kadim metinlerine hızlı, güvenilir ve kapsamlı erişim sağlamak amacıyla geliştirilmiş dijital bir araştırma arayüzüdür. Araştırmacılar ve öğrenciler için geniş bir literatür tarama imkanı sunar.
 
-## Özellikler
-- **Çoklu Kaynak Desteği:** Tek bir arayüz üzerinden farklı inanç sistemlerine ve tarihsel metinlere erişim.
-- **Hızlı Arama:** Yerel indeksleme ve API entegrasyonları ile metin içerisinde anında sonuç bulma.
-- **Vurgulama Sistemi:** Arama sonuçlarında eşleşen kelimelerin otomatik olarak vurgulanması.
-- **Kullanıcı Dostu Arayüz:** Sade ve odaklanmış bir araştırma deneyimi.
+## 📚 Kapsamlı Arama Kütüphanesi
+Arama motorumuz, aşağıdaki temel metinler ve külliyatlar üzerinde tam metin taraması yapabilmektedir:
 
-## Nasıl Kullanılır?
-1. [Siteye giriş yapın](https://akhenaton41.github.io/PROJE_ADIN/).
-2. Arama kutusuna ulaşmak istediğiniz terimi girin.
-3. Sağdaki menüden arama yapmak istediğiniz kaynağı seçin.
-4. Sonuçlar anlık olarak ekranınıza listelenecektir.
+* **İslami Kaynaklar:** Kur'an-ı Kerim, Hadis Külliyatı (Kütüb-i Sitte), Risale-i Nur Külliyatı.
+* **Tefsirler:** İbni Kesir, Fahreddin er-Razi ve diğer temel tefsir kaynakları.
+* **Kadim Kutsal Metinler:** Tevrat, İncil, Zebur (Kitab-ı Mukaddes).
+* **Doğu Felsefesi ve İnançları:** Avesta, Bhagavad Gita, Rigveda.
+* **Yahudi Geleneği:** Talmud ve Mişna külliyatı.
 
-## Teknik Detaylar
-- **Karakter Kodlaması:** `windows-1254` (Türkçe karakter uyumluluğu için).
-- **Altyapı:** Saf JavaScript, HTML5 ve CSS3. (Sunucu tarafı gerektirmez, tamamen istemci taraflı çalışır).
-- **Veri Kaynağı:** GitHub API ve statik JSON arşivleri.
+## 🚀 Proje Hakkında
+Bu sistem, herhangi bir sunucu tarafı bağımlılığı olmadan, tamamen istemci taraflı (client-side) çalışacak şekilde optimize edilmiştir. 
+- **Hızlı Sorgulama:** Yerel veri tabanı ve API entegrasyonu ile saniyeler içinde sonuçlara ulaşın.
+- **Kullanıcı Deneyimi:** Eşleşen ifadeleri otomatik vurgulayan akıllı arayüz.
+- **Güvenli Erişim:** Kişisel verilerinizi saklamadan, açık kaynaklı ve şeffaf bir çalışma yapısı.
 
-## İletişim
-Proje ile ilgili soru, görüş veya önerileriniz için GitHub üzerinden "Issues" kısmını kullanabilir veya bana ulaşabilirsiniz.
+## 🔗 Canlı Erişim
+Projenin güncel sürümünü ve arama motorunu kullanmak için aşağıdaki bağlantıya tıklayabilirsiniz:
+
+**[Dinler Tarihi Arama Motoru - Canlı Yayında](https://akhenaton41.github.io/Dinler-Tarihi-Arama-Motoru/)**
 
 ---
-*Bu proje, dini ve tarihsel metinlerin akademik veya kişisel araştırmalarda daha erişilebilir olması amacıyla geliştirilmiştir.*
+*Proje, akademik özgürlük ve bilgiye erişim prensipleri doğrultusunda, araştırmacıların metinler arası karşılaştırma yapabilmesi için hazırlanmıştır.*
