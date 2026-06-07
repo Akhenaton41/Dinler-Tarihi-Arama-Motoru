@@ -1,0 +1,143 @@
+body{
+	padding:0;
+	margin:0;
+	
+	}
+
+#container{
+	position:relative;
+	height:100%;
+	}
+
+#container div{position:absolute;}
+
+body, #container{overflow-y: hidden;}
+
+.searchBar{
+	position: fixed;
+	top:0;
+	left:0;
+	width:100%;
+	min-height:70px;
+	box-sizing: inherit;
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;	
+	}
+
+
+.Arama{
+	margin-top:5px;
+	top: 55px;
+	width:80%;
+	background: #fff;
+	display: flex;
+	margin-left:10%;
+	}
+
+#aramaKutusuAlani,#aramaTuru{
+	
+	box-shadow: 1px 1px 4px 0 #999;
+	}
+	
+
+#aramaKutusuAlani {
+	border: 1px 0px 1px 1px solid #dfe1e5;  
+	right: 15px;
+	width: 500px;
+    
+    border-top-left-radius:24px;
+	border-bottom-left-radius:24px;
+	}
+
+#aramaKutusuAlani input {
+	border: 1px hidden #ccc;
+	width: 80%;
+	line-height: 50px;
+	word-wrap: break-word;
+	color: rgba(0,0,0,.87);
+	outline: none;
+	}
+
+#aramaKutusuAlani span {
+  width: 15%;
+  text-align: center;
+  margin-top: 10px;
+  margin-left:20px;
+  font-size: 20px;
+}
+
+#aramaTuru,option,optgroup,#aramaKutusuAlani input{
+	font-family: 'Quicksand', sans-serif;
+	font-size: 20px;
+	line-height: 50px;
+	}
+
+#aramaTuru{
+	border: 1px hidden #ccc;
+	width:250px;
+	border-radius: 4px;
+	height:52px;
+    border-top-right-radius:24px;
+	border-bottom-right-radius:24px;
+	
+	text-align:center;
+	width:100%;
+	}
+
+#sonucAlani{
+	position:relative;
+	top:74px;
+	width:96%;
+	height:82%;
+	padding:2%;
+	
+	font-family: 'Quicksand', sans-serif;
+	font-size: 20px;
+	overflow:auto;
+	}
+
+.sonucSay{
+	color: #70757a;	
+	}
+
+.meal span{color: #a30; font-weight: bold;}
+
+.bold td{font-weight: bold; width:33%}
+
+.kunye tr td{text-align:center}
+
+optgroup, option{background:#fff}
+
+optgroup{font-style: normal; color:#a30; }
+
+option{color:#000}
+
+*:lang(ar){font-family: 'Amiri', serif; font-size:26px;}
+
+#sonucAlani iframe {
+    width:100%; height:100%; outline: none; padding:0; margin:0
+    display: block;
+    max-height: 100%;  /* sonucAlani'nýn yüksekliðini (%82'yi) asla aÝamaz */
+    box-sizing: border-box;
+}
+
+#sonucAlani mark {
+    color: #000000;            /* Üzerindeki yazýnýn net okunmasý için siyah */
+    font-weight: bold;         /* Kelimeyi hem boyar hem de kalýn yapar */
+    border-radius: 3px; 
+    background:#FFFFCC;
+}
+
+.progress-container {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    margin: 15px 0;
+    display: none;
+}
+.progress-bar {
+    width: 0%;
+    height: 12px;
+    background-color: #e76f51;
+    border-radius: 4px;
+    transition: width 0.1s ease;
+}
