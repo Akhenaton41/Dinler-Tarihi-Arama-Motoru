@@ -1,0 +1,99 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1254">
+<link href="css/font-awesome.min.css" rel="stylesheet">
+<link href="css/arama.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Amiri&family=Quicksand&display=swap" rel="stylesheet"> 
+<script src="javascript/arama.js"></script>
+<title>Arama Motoru</title>
+</head>
+
+<body>
+
+<div id="container">
+	<div class="searchBar"><center>
+		
+		<table class="Arama" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td id="aramaKutusuAlani" align="left"><span>&#128269;</span> <input id="myInput" placeholder="Aranacak kelimeyi buraya yazın" value="" onchange="" onfocus="this.value=''"></td>
+				
+				<td id="aramaTuruAlani" align="right">
+				<select id="aramaTuru" size="1" name="aramaTuru" onchange="Ara()">
+				
+				<optgroup label="Ansiklopediler/Sözlükler">
+					<option value="13">Diyanet İslam Ansiklopedisi</option>
+					<option value="15">Etimoloji Sözlüğünde Ara</option>
+					<option value="11">TDK Sözlük’te Ara</option>
+					<option value="10">Wikipedia’da Ara</option>
+					
+				</optgroup>
+				
+
+				
+				<optgroup label="Kutsal Kitaplar">
+					<option value="16">Avesta’da Ara</option>
+					<option value="26">Bhagavad Gita'da Ara</option>
+					<option value="42">İncil’de Ara</option>
+					<option value="0">Kurân-ı Kerîm’de Ara</option>
+					<option value="17">Rigveda'da Ara</option>
+					<option value="1">Tevrat’ta Ara</option>
+					<option value="41">Zebur’da Ara</option>				
+				</optgroup>
+
+				<optgroup label="Kur'an-ı Kerim Tefsirleri">
+				    <option value="18">Beyzavi Tefsiri'nde Ara</option>
+				    <option value="19">Diyanet Tefsiri'nde Ara</option>
+				    <option value="20">Elmalılı Tefsiri'nde Ara</option>
+				    <option value="21">İbn Abbas Tefsiri'nde Ara</option>
+				    <option value="22">İbn Kesir Tefsiri'nde Ara</option>
+				    <option value="23">Maturidi Tefsiri'nde Ara</option>
+				    <option value="24">Razi Tefsiri'nde Ara</option>
+				    <option value="25">Zemahşeri Tefsiri'nde Ara</option>
+				</optgroup>
+
+				<optgroup label="Hadis Kitapları">
+					<option value="5">Buhârî’de Ara</option>
+					<option value="4">Ebû Dâvûd’da Ara</option>
+					<option value="6">İbn Mâce’de Ara</option>
+					<option value="7">Mâlik’te Ara</option>
+					<option value="8">Müslim’de Ara</option>
+					<option value="9">Nesâî’de Ara</option>
+					<option value="3">Tirmizî’de Ara</option>
+				</optgroup>
+
+				<optgroup label="Musevi Kaynakları">
+				    <option value="37">Cevaplar (Responsa)'da Ara</option>
+				    <option value="30">Halakhah'ta Ara</option>
+				    <option value="29">Hasidik Metinlerde Ara</option>
+				    <option value="38">İkinci Tapınak'ta Ara</option>
+				    <option value="32">Kabalistik Metinlerde Ara</option>
+				    <option value="33">Litürji (Ayinler)'de Ara</option>
+				    <option value="34">Midraş'ta Ara</option>
+				    <option value="35">Mişna'da Ara</option>
+				    <option value="36">Musar'da Ara</option>
+				    <option value="39">Tanah'ta Ara</option>
+				    <option value="40">Tosefta'da Ara</option>
+				    <option value="31">Yahudi Düşüncesi'nde Ara</option>
+			    	
+				</optgroup>
+
+				<optgroup label="Talmud">
+					<option value="27">Babil Talmudu'nda Ara</option>
+					<option value="28">Yeruşalim Talmudu'nda Ara</option>
+				</optgroup>
+				
+				<optgroup label="Diğer Kitaplar">
+					<option value="2">Risale-i Nur'da Ara</option>
+				</optgroup>
+				
+				</select></td>
+			</tr>
+		</table>
+
+	</center></div>
+
+	
+	<div id="sonucAlani"></div>
+
+</div>
+
+<script>window.onload = function() {baslat();};</script></body></html>
