@@ -77,7 +77,7 @@ function Ara(e) {
         case 13: sozlukteAra(); break;
         case 16: avestaAra(); break;
         case 17: rigvedaAra(); break;
-		case 18: tefsirAra("beyzavi"); break;
+	case 18: tefsirAra("beyzavi"); break;
         case 19: tefsirAra("diyanet"); break;
         case 20: tefsirAra("elmali"); break;
         case 21: tefsirAra("ibnabbas"); break;
@@ -87,20 +87,20 @@ function Ara(e) {
         case 25: tefsirAra("zemahseri"); break;
         case 26: gitaAra(); break;
         case 27: talmudAra("Talmud/Bavli"); break;
-		case 28: talmudAra("Talmud/Yerushalmi"); break;
-		case 29: talmudAra("Chasidut"); break;
-		case 30: talmudAra("Halakhah"); break;
-		case 31: talmudAra("Jewish Thought"); break;
-		case 32: talmudAra("Kabbalah"); break;
-		case 33: talmudAra("Liturgy"); break;
-		case 34: talmudAra("Midrash"); break;
-		case 35: talmudAra("Mishnah"); break;
-		case 36: talmudAra("Musar"); break;
-		case 37: talmudAra("Responsa"); break;
-		case 38: talmudAra("Second Temple"); break;
-		case 39: talmudAra("Tanakh"); break;
-		case 40: talmudAra("Tosefta"); break;
-		case 41: bibleGetir("13660-16097"); break;         // Zebur
+	case 28: talmudAra("Talmud/Yerushalmi"); break;
+	case 29: talmudAra("Chasidut"); break;
+	case 30: talmudAra("Halakhah"); break;
+	case 31: talmudAra("Jewish Thought"); break;
+	case 32: talmudAra("Kabbalah"); break;
+	case 33: talmudAra("Liturgy"); break;
+	case 34: talmudAra("Midrash"); break;
+	case 35: talmudAra("Mishnah"); break;
+	case 36: talmudAra("Musar"); break;
+	case 37: talmudAra("Responsa"); break;
+	case 38: talmudAra("Second Temple"); break;
+	case 39: talmudAra("Tanakh"); break;
+	case 40: talmudAra("Tosefta"); break;
+	case 41: bibleGetir("13660-16097"); break;         // Zebur
         case 42: bibleGetir("22724-30181"); break;         // İncil
     }
 }
@@ -598,7 +598,7 @@ async function rigvedaAra() {
         var vTur = turkceMeal.replace(dinamikTurkceRegex, "<mark>$1</mark>");
 
         htmlAkisi += "<div style='display: block !important; position: relative !important; clear: both !important; width: 100% !important; margin: 15px 0 !important; padding: 15px !important; background: #fff; border: 1px solid #eee; border-radius: 4px; box-sizing: border-box !important; height: auto !important;'>" +
-                     "<span style='color: #d9534f !important; font-weight: bold !important; display: block !important; margin-bottom: 8px !important;'>Rigveda - Mandala: " + ayet.mandala + ", İlahi: " + ayet.hymn + ", Ayet: " + ayet.verse + "</span>" +
+                     "<span style='color: #a30; !important; font-weight: bold !important; display: block !important; margin-bottom: 8px !important;'>Rigveda - Mandala: " + ayet.mandala + ", İlahi: " + ayet.hymn + ", Ayet: " + ayet.verse + "</span>" +
                      "<p style='margin: 0 !important; padding: 0 !important; display: block !important; height: auto !important; max-height: none !important; overflow: visible !important;'>" + vTur + "</p>" +
                      "</div>";
     }
